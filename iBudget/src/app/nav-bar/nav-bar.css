@@ -1,0 +1,21 @@
+.navbar {
+  background-color: lightpink;
+  margin: none;
+  padding: 3px;
+}
+.navbar a {
+  background-color: lightblue;
+  text-decoration: none;
+  padding: 12px;
+}
+
+.navbar-logo {
+  background-color: lightseagreen;
+}
+
+.navbar ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 6px;
+}
