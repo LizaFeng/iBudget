@@ -1,0 +1,7 @@
+.pdf-budget-containers {
+  background: lightgreen;
+  height: 300px; /* Example fixed height */
+  /* or */
+  max-height: 300px; /* Example maximum height */
+  overflow-y: auto;
+}
