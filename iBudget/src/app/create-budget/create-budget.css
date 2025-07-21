@@ -1,0 +1,16 @@
+.new-budget-form-container {
+  margin: auto;
+  width: 90%;
+}
+
+.new-budget-heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.new-budget-submit-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

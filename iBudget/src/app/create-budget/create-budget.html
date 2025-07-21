@@ -1,8 +1,12 @@
 <!-- This will be where the form is for the user to create or log a new budget -->
 <div class="new-budget-form-container">
+  <div class="new-budget-heading">
+    <h2>Create Budget for:</h2>
+  </div>
   <form [formGroup]="budgetForm" (ngSubmit)="onSubmit()">
-    <h3>Income</h3>
+    <!-- Income section -->
     <div formArrayName="incomes">
+      <h3>Income</h3>
       <div
         *ngFor="let income of incomes.controls; let i = index"
         [formGroupName]="i"
@@ -14,8 +18,25 @@
     </div>
     <button type="button" (click)="addIncome()">Add Income</button>
 
-    <!-- Repeat for Budget, Debts, Savings -->
+    <!-- Expenses Section -->
+    <div formArrayName="expenses"></div>
+    <h3>Expenses</h3>
+    <button type="button" (click)="addExpenses()">Add expenses</button>
+    <!-- Debt Section -->
 
-    <button type="submit">Submit</button>
+    <div formArrayName="debts">
+      <h3>Debt</h3>
+      <button type="button" (click)="addDebts()">Add Debts</button>
+    </div>
+    <!-- Savings Section -->
+
+    <div formArrayName="savings">
+      <h3>Savings</h3>
+      <button type="button" (click)="addSavings()">Add Savings</button>
+    </div>
+
+    <div class="new-budget-submit-container">
+      <button class="new-budget-submit-btn" type="submit">Submit</button>
+    </div>
   </form>
 </div>
