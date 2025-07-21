@@ -5,6 +5,7 @@ import { Component } from '@angular/core';
   imports: [],
   templateUrl: './budget-pdf-card.html',
   styleUrl: './budget-pdf-card.css',
+  standalone: true,
 })
 export class BudgetPdfCard {}
 
