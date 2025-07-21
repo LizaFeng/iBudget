@@ -1,0 +1,20 @@
+.account-deletion-btn-div {
+  display: flex;
+  justify-content: center;
+  padding: 12px;
+}
+.pdf-budget-containers {
+  background: lightgreen;
+  height: 300px; /* Example fixed height */
+  /* or */
+  max-height: 300px; /* Example maximum height */
+  padding: 12px;
+  overflow-y: auto;
+}
+
+.user-info-container {
+  background-color: aqua;
+  margin: auto;
+  padding: 2rem;
+  width: 50%;
+}

@@ -6,5 +6,31 @@
  - being able to delete their account 
 
  this would also be where we have the login/signup if we sense that the user did not signup
+ 
+ 7/16/25 idea: having a container where there is a scrolling feature for the user to see
+ the previous budgets (future: filter by the month and the year)
  -->
-<p>user-info works!</p>
+<div class="user-info-container">
+  <div class="account-settings-container">
+    <!-- storing the user email so they know what email they used -->
+    <p>User email: usersemail&#64;email.com</p>
+  </div>
+  <div class="pdf-budget-containers">
+    <!-- should contain components of a budget sheet. populate by grabbing from the database
+         budget-pdf-card
+        -->
+    <budget-pdf-card></budget-pdf-card>
+    <h5>budget 9/2024</h5>
+    <h5>budget 10/2024</h5>
+    <h5>budget 11/2024</h5>
+    <h5>budget 12/2024</h5>
+    <h5>budget 1/2025</h5>
+    <h5>budget 2/2025</h5>
+    <h5>budget 3/2025</h5>
+    <h5>budget 4/2025</h5>
+    <h5>budget 5/2025</h5>
+  </div>
+  <div class="account-deletion-btn-div">
+    <button class="delete-account-btn">Delete Account</button>
+  </div>
+</div>
