@@ -8,5 +8,3 @@ import { Component } from '@angular/core';
   standalone: true,
 })
 export class BudgetPdfCard {}
-
-//TODO:july 18 figure out how to import this component to the User-info component
