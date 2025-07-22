@@ -22,15 +22,9 @@
     <!-- Income section -->
     <div formArrayName="incomes">
       <h3>Income</h3>
-      <div
-        *ngFor="let income of incomes.controls; let i = index"
-        [formGroupName]="i"
-      >
-        <input placeholder="Source" formControlName="source" />
-        <input type="number" placeholder="Amount" formControlName="amount" />
-        <button type="button" (click)="removeIncome(i)">Remove</button>
-      </div>
+      <app-default-income-component />
     </div>
+
     <button type="button" (click)="addIncome()">Add Income</button>
 
     <!-- Expenses Section -->

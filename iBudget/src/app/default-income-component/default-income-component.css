@@ -1,0 +1,42 @@
+.component-main-container {
+  background-color: lightgray;
+  padding: 1%;
+  position: relative; /* Essential for positioning child elements relative to this div */
+  margin-bottom: 2rem;
+  border: 2px solid blue;
+}
+
+.delete-btn {
+  position: absolute; /* Positions the button relative to the nearest positioned ancestor (parent-div) */
+  top: 0; /* Aligns the button to the top edge of the parent-div */
+  right: 0; /* Aligns the button to the right edge of the parent-div */
+  padding: 10px;
+  background-color: green;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+div {
+  padding: 5px;
+}
+
+.income-frequency {
+  margin-left: 5px;
+}
+
+.income-naming {
+  display: flex;
+}
+
+label {
+  margin: 5px;
+}
+
+.pay-info {
+  display: flex;
+}
+
+.pay-label {
+  margin: 5px; /* Remove default margin to control spacing */
+}
