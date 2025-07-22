@@ -1,0 +1,45 @@
+<div class="component-main-container">
+  <div class="income-info">
+    <div class="income-naming">
+      <label for="income-source-name">Income Source Name:</label>
+      <input class="income-source-name" id="income-source-name" />
+    </div>
+    <div class="pay-info">
+      <label for="income-source-amt">Income Source Amount:</label>
+      <input class="income-source-amt" id="income-source-amt" />
+
+      <select
+        class="income-frequency"
+        name="income-frequency"
+        id="income-frequency"
+      >
+        <option value="weekly">Weekly</option>
+        <option value="biweekly">Bi-weekly</option>
+        <option value="monthly">Monthly</option>
+      </select>
+    </div>
+    <div class="pay-date-info">
+      <label for="pay-date">Pay Date:</label>
+      <input type="date" id="pay-date" name="pay-date" class="pay-date" />
+    </div>
+    <div class="pay-period">
+      <label for="pay-period-start">Pay Period Start: </label>
+      <input
+        type="date"
+        id="pay-period-start"
+        name="pay-period-start"
+        class="pay-period-start"
+      />
+      <label for="pay-period-end">Pay Period End: </label>
+      <input
+        type="date"
+        id="pay-period-end"
+        name="pay-period-end"
+        class="pay-period-end"
+      />
+    </div>
+    <!-- TODO: use this for the extra budgeting cards that the user makes and not for the default
+    
+    <button class="delete-btn"><mat-icon>delete_outline</mat-icon></button> -->
+  </div>
+</div>

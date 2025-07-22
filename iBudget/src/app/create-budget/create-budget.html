@@ -1,21 +1,51 @@
 <!-- This will be where the form is for the user to create or log a new budget -->
 <div class="new-budget-form-container">
-  <form [formGroup]="budgetForm" (ngSubmit)="onSubmit()">
-    <h3>Income</h3>
-    <div formArrayName="incomes">
-      <div
-        *ngFor="let income of incomes.controls; let i = index"
-        [formGroupName]="i"
-      >
-        <input placeholder="Source" formControlName="source" />
-        <input type="number" placeholder="Amount" formControlName="amount" />
-        <button type="button" (click)="removeIncome(i)">Remove</button>
-      </div>
+  <div class="new-budget-heading">
+    <h2 class="a-part-of-budget-heading">Create Budget for:</h2>
+    <div class="date-picker-part">
+      <input
+        type="date"
+        id="start-date"
+        name="start-date"
+        class="a-part-of-budget-heading"
+      />
+      <h4 class="a-part-of-budget-heading">-</h4>
+      <input
+        type="date"
+        id="end-date"
+        name="end-date"
+        class="a-part-of-budget-heading"
+      />
     </div>
+  </div>
+  <form [formGroup]="budgetForm" (ngSubmit)="onSubmit()">
+    <!-- Income section -->
+    <div formArrayName="incomes">
+      <h3>Income</h3>
+      <app-default-income-component />
+    </div>
+
     <button type="button" (click)="addIncome()">Add Income</button>
 
-    <!-- Repeat for Budget, Debts, Savings -->
+    <!-- Expenses Section -->
+    <div formArrayName="expenses"></div>
+    <h3>Expenses</h3>
+    <button type="button" (click)="addExpenses()">Add expenses</button>
+    <!-- Debt Section -->
 
-    <button type="submit">Submit</button>
+    <div formArrayName="debts">
+      <h3>Debt</h3>
+      <button type="button" (click)="addDebts()">Add Debts</button>
+    </div>
+    <!-- Savings Section -->
+
+    <div formArrayName="savings">
+      <h3>Savings</h3>
+      <button type="button" (click)="addSavings()">Add Savings</button>
+    </div>
+
+    <div class="new-budget-submit-container">
+      <button class="new-budget-submit-btn" type="submit">Submit</button>
+    </div>
   </form>
 </div>

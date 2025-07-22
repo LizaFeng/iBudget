@@ -7,10 +7,11 @@ import {
   FormArray,
   Validators,
 } from '@angular/forms';
+import { DefaultIncomeComponent } from '../default-income-component/default-income-component';
 
 @Component({
   selector: 'app-create-budget',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, DefaultIncomeComponent],
   templateUrl: './create-budget.html',
   styleUrl: './create-budget.css',
 })
