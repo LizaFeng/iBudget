@@ -1,3 +1,11 @@
+.a-part-of-budget-heading {
+  padding: 5px;
+  margin: 5px;
+}
+
+.date-picker-part {
+  display: flex;
+}
 .new-budget-form-container {
   margin: auto;
   width: 90%;
@@ -7,6 +15,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 5px;
 }
 
 .new-budget-submit-container {

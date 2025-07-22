@@ -1,7 +1,22 @@
 <!-- This will be where the form is for the user to create or log a new budget -->
 <div class="new-budget-form-container">
   <div class="new-budget-heading">
-    <h2>Create Budget for:</h2>
+    <h2 class="a-part-of-budget-heading">Create Budget for:</h2>
+    <div class="date-picker-part">
+      <input
+        type="date"
+        id="start-date"
+        name="start-date"
+        class="a-part-of-budget-heading"
+      />
+      <h4 class="a-part-of-budget-heading">-</h4>
+      <input
+        type="date"
+        id="end-date"
+        name="end-date"
+        class="a-part-of-budget-heading"
+      />
+    </div>
   </div>
   <form [formGroup]="budgetForm" (ngSubmit)="onSubmit()">
     <!-- Income section -->
