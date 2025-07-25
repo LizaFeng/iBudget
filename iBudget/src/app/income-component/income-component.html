@@ -38,8 +38,9 @@
         class="pay-period-end"
       />
     </div>
-    <!-- TODO: use this for the extra budgeting cards that the user makes and not for the default
-    
-    <button class="delete-btn"><mat-icon>delete_outline</mat-icon></button> -->
+    @if (defaultCard == false) {
+    <!-- Content to display when the condition is true -->
+    <button class="delete-btn"><mat-icon>delete_outline</mat-icon></button>
+    }
   </div>
 </div>

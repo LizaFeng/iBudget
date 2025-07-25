@@ -22,7 +22,7 @@
     <!-- Income section -->
     <div formArrayName="incomes">
       <h3>Income</h3>
-      <app-default-income-component />
+      <app-income-component [defaultCard]="true" />
     </div>
 
     <button type="button" (click)="addIncome()">Add Income</button>
