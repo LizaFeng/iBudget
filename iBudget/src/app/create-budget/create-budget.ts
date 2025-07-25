@@ -8,10 +8,11 @@ import {
   Validators,
 } from '@angular/forms';
 import { IncomeComponent } from '../income-component/income-component';
+import { ExpenseComponent } from '../expense-component/expense-component';
 
 @Component({
   selector: 'app-create-budget',
-  imports: [ReactiveFormsModule, IncomeComponent],
+  imports: [ReactiveFormsModule, IncomeComponent, ExpenseComponent],
   templateUrl: './create-budget.html',
   styleUrl: './create-budget.css',
 })

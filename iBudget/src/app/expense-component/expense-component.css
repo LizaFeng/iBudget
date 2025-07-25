@@ -1,0 +1,7 @@
+.expense-component-main-container {
+  background-color: lightgray;
+  padding: 1%;
+  position: relative; /* Essential for positioning child elements relative to this div */
+  margin-bottom: 2rem;
+  border: 2px solid blue;
+}
