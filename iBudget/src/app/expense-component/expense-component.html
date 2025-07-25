@@ -1,31 +1,33 @@
 <div class="expense-component-main-container">
-  <div class="expense-naming">
+  <p class="expense-naming">
     <label for="expense-name">Expense Name:</label>
     <input class="expense-name" id="expense-name" />
-  </div>
+  </p>
   <div class="expense-amt">
-    <!-- <div class="expense-amt-dollar-form"> -->
-    <label for="expense-amt-dollar">Expense Amount ($):</label>
-    <input type="text" id="expense-amt-dollar" />
-    <!-- </div> -->
-    <!-- <div class="expense-amt-percent"> -->
-    <label for="expense-amt-percent">Expense Amount (%):</label>
-    <input type="text" id="expense-amt-percent" />
-    <!-- </div> -->
+    <p class="expense-amt-dollar-form">
+      <label for="expense-amt-dollar">Expense Amount ($):</label>
+      <input type="text" id="expense-amt-dollar" />
+    </p>
+    <p class="expense-amt-percent">
+      <label for="expense-amt-percent">Expense Amount (%):</label>
+      <input type="text" id="expense-amt-percent" />
+    </p>
   </div>
-  <label for="exp-type">Expense Type:</label>
-  <select class="exp-type" name="exp-type" id="exp-type">
-    <option value="" disabled selected>Select an option</option>
-    <option value="fees">Fees</option>
-    <option value="food">Food</option>
-    <option value="housing cost">Housing Cost</option>
-    <option value="insurance">Insurance</option>
-    <option value="medical">Medical</option>
-    <option value="others">Others</option>
-    <option value="transportation">Transportation</option>
-    <option value="utilities">Utilities</option>
-  </select>
-  <div class="expense-freq">
+  <p>
+    <label for="exp-type">Expense Type:</label>
+    <select class="exp-type" name="exp-type" id="exp-type">
+      <option value="" disabled selected>Select an option</option>
+      <option value="fees">Fees</option>
+      <option value="food">Food</option>
+      <option value="housing cost">Housing Cost</option>
+      <option value="insurance">Insurance</option>
+      <option value="medical">Medical</option>
+      <option value="others">Others</option>
+      <option value="transportation">Transportation</option>
+      <option value="utilities">Utilities</option>
+    </select>
+  </p>
+  <p class="expense-freq">
     <label for="exp-freq">Expense Frequency:</label>
     <select class="exp-freq" name="exp-freq" id="exp-freq">
       <option value="weekly">Weekly</option>
@@ -33,11 +35,11 @@
       <option value="monthly">Monthly</option>
       <option value="yearly">Yearly</option>
     </select>
-  </div>
-
-  <label for="due-date">Due Date:</label>
-  <input type="date" id="due-date" />
-
+  </p>
+  <p>
+    <label for="due-date">Due Date:</label>
+    <input type="date" id="due-date" />
+  </p>
   @if (defaultCard == false) {
   <!-- Content to display when the condition is true -->
   <button class="delete-btn"><mat-icon>delete_outline</mat-icon></button>
