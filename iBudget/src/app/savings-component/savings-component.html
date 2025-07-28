@@ -1,0 +1,30 @@
+<div class="savings-component-main-container">
+  <p class="savings-naming">
+    <label for="savings-name">Savings Name:</label>
+    <input class="savings-name" id="savings-name" />
+  </p>
+  <div class="savings-amt">
+    <p class="savings-amt-dollar-form">
+      <label for="savings-amt-dollar">Contribution Amount ($):</label>
+      <input type="text" id="savings-amt-dollar" />
+    </p>
+    <p class="savings-amt-percent">
+      <label for="savings-amt-percent">Contribution Amount (%):</label>
+      <input type="text" id="savings-amt-percent" />
+    </p>
+  </div>
+  <p>
+    <label for="savings-type">Savings Type:</label>
+    <select class="savings-type" id="savings-type">
+      <option value="" disabled>Select an option</option>
+      <option value="Emergency">Emergency</option>
+      <option value="long-term">Long Term</option>
+      <option value="others">Others</option>
+      <option value="short-term">Short Term</option>
+    </select>
+  </p>
+  @if (defaultCard == false) {
+  <!-- Content to display when the condition is true -->
+  <button class="delete-btn"><mat-icon>delete_outline</mat-icon></button>
+  }
+</div>

@@ -10,6 +10,7 @@ import {
 import { IncomeComponent } from '../income-component/income-component';
 import { ExpenseComponent } from '../expense-component/expense-component';
 import { DebtComponent } from '../debt-component/debt-component';
+import { SavingsComponent } from '../savings-component/savings-component';
 @Component({
   selector: 'app-create-budget',
   imports: [
@@ -17,6 +18,7 @@ import { DebtComponent } from '../debt-component/debt-component';
     IncomeComponent,
     ExpenseComponent,
     DebtComponent,
+    SavingsComponent,
   ],
   templateUrl: './create-budget.html',
   styleUrl: './create-budget.css',
