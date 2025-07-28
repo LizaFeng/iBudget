@@ -9,10 +9,15 @@ import {
 } from '@angular/forms';
 import { IncomeComponent } from '../income-component/income-component';
 import { ExpenseComponent } from '../expense-component/expense-component';
-
+import { DebtComponent } from '../debt-component/debt-component';
 @Component({
   selector: 'app-create-budget',
-  imports: [ReactiveFormsModule, IncomeComponent, ExpenseComponent],
+  imports: [
+    ReactiveFormsModule,
+    IncomeComponent,
+    ExpenseComponent,
+    DebtComponent,
+  ],
   templateUrl: './create-budget.html',
   styleUrl: './create-budget.css',
 })
