@@ -71,12 +71,12 @@ export class CreateBudget {
   newExpenses() {
     return this.fb.group({
       source: ['', Validators.required],
-      amount: [0, [Validators.required, Validators.min(0)]],
+      amount: ['', [Validators.required, Validators.min(0)]],
     });
   }
 
   addExpenses() {
-    this.expenses.push(this.newIncome());
+    this.expenses.push(this.newExpenses());
   }
 
   removeExpenses(index: number) {

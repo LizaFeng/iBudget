@@ -3,6 +3,7 @@ import { Input } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 
 @Component({
+  standalone: true,
   selector: 'app-expense-component',
   imports: [MatIcon],
   templateUrl: './expense-component.html',
