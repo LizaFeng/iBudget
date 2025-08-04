@@ -1,51 +1,63 @@
 <div class="debt-component-main-container">
   <!--  -->
-  <p class="debt-naming">
-    <label for="debt-name">Debt Name:</label>
-    <input class="debt-name" id="debt-name" />
-  </p>
+  <mat-form-field appearance="fill" class="debt-naming full-width">
+    <mat-label for="debt-name">Debt Name:</mat-label>
+    <input matInput formControlName="debtName" class="debt-name" />
+  </mat-form-field>
   <div class="debt-amt">
-    <p class="debt-amt-dollar-form">
-      <label for="debt-amt-dollar">Debt Amount ($):</label>
-      <input type="text" id="debt-amt-dollar" />
-    </p>
-    <p class="debt-amt-percent">
-      <label for="debt-amt-percent">Debt Amount (%):</label>
-      <input type="text" id="debt-amt-percent" />
-    </p>
-    <p>
-      <label for="min-payment">Minimum Payment:</label>
-      <input type="text" id="min-payment" />
-    </p>
+    <mat-form-field appearance="fill" class="half-width">
+      <mat-label>Debt Amount ($)</mat-label>
+      <input matInput type="number" formControlName="amountDollar" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="half-width">
+      <mat-label>Debt Amount (%)</mat-label>
+      <input matInput type="number" formCOntrolName="amountPercent" />
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Minimum Payment</mat-label>
+      <input matInput type="number" formControlName="minPayment" />
+    </mat-form-field>
   </div>
-  <p>
-    <label for="will-pay">I will pay:</label>
-    <input type="text" name="will-pay" id="will-pay" />
-  </p>
-  <p>
-    <label for="exp-type">Debt Type:</label>
-    <select class="exp-type" name="exp-type" id="exp-type">
-      <option value="" disabled selected>Select an option</option>
-      <option value="car-payments">Car payment</option>
-      <option value="credit-card">Credit Card</option>
-      <option value="medical">Medical</option>
-      <option value="mortgage">Mortgage</option>
-      <option value="others">Others</option>
-    </select>
-  </p>
-  <p class="debt-freq">
-    <label for="exp-freq">Payment Frequency:</label>
-    <select class="exp-freq" name="exp-freq" id="exp-freq">
-      <option value="weekly">Weekly</option>
-      <option value="biweekly">Bi-weekly</option>
-      <option value="monthly">Monthly</option>
-      <option value="yearly">Yearly</option>
-    </select>
-  </p>
-  <p>
-    <label for="due-date">Due Date:</label>
-    <input type="date" id="due-date" />
-  </p>
+
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label> I will pay: </mat-label>
+    <input matInput type="number" formControlName="willPay" />
+  </mat-form-field>
+
+  <!-- Debt Type -->
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Debt Type</mat-label>
+    <mat-select formControlName="debtType">
+      <mat-option value="" disabled> Select an option</mat-option>
+      <mat-option value="carPayments">Car Payments</mat-option>
+      <mat-option value="creditCard">Credit Card</mat-option>
+      <mat-option value="medical">Medical</mat-option>
+      <mat-option value="others">Others</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <!-- Payment frequency -->
+  <mat-form-field appearance="fill" class="debt-freq full-width">
+    <mat-label>Payment Frequency:</mat-label>
+    <mat-select formControlName="frequency" class="exp-freq">
+      <mat-option value="weekly">Weekly</mat-option>
+      <mat-option value="biweekly">Bi-weekly</mat-option>
+      <mat-option value="monthly">Monthly</mat-option>
+      <mat-option value="yearly">Yearly</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <!-- Due Date -->
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Due Date: </mat-label>
+    <input matInput [matDatepicker]="dueDatePicker" formControlName="dueDate" />
+
+    <mat-datepicker-toggle
+      matSuffix
+      [for]="dueDatePicker"
+    ></mat-datepicker-toggle>
+    <mat-datepicker #dueDatePicker></mat-datepicker>
+  </mat-form-field>
 
   <!--  -->
   @if (defaultCard == false) {

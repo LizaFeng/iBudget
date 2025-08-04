@@ -25,18 +25,18 @@ div {
   margin-left: 5px;
 }
 
-.income-naming {
+.income-name {
   display: flex;
 }
 
-label {
+mat-label {
   margin: 5px;
 }
 
-.pay-info {
+/* .pay-info {
   display: flex;
-}
+} */
 
-.pay-label {
-  margin: 5px; /* Remove default margin to control spacing */
+mat-form-field {
+  padding: 5px;
 }

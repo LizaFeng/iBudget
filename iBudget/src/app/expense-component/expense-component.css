@@ -16,9 +16,9 @@
   border: none;
   cursor: pointer;
 }
-p {
+mat-form-field {
   padding: 5px;
 }
-label {
+mat-label {
   margin: 5px;
 }

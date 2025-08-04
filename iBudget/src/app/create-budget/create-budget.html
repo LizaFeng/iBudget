@@ -1,4 +1,5 @@
 <!-- This will be where the form is for the user to create or log a new budget -->
+
 <div class="new-budget-form-container">
   <div class="new-budget-heading">
     <h2 class="a-part-of-budget-heading">Create Budget for:</h2>
@@ -24,13 +25,18 @@
       <h3>Income</h3>
       <app-income-component [defaultCard]="true" />
     </div>
-
     <button type="button" (click)="addIncome()">Add Income</button>
 
     <!-- Expenses Section -->
     <div formArrayName="expenses"></div>
     <h3>Expenses</h3>
     <app-expense-component [defaultCard]="true" />
+    <div
+      *ngFor="let expense of expenses.controls; let i = index"
+      [formGroupName]="i"
+    >
+      <app-expense-component [defaultCard]="false" />
+    </div>
     <button type="button" (click)="addExpenses()">Add expenses</button>
     <!-- Debt Section -->
 

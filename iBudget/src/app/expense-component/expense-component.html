@@ -1,45 +1,57 @@
 <div class="expense-component-main-container">
-  <p class="expense-naming">
-    <label for="expense-name">Expense Name:</label>
-    <input class="expense-name" id="expense-name" />
-  </p>
+  <mat-form-field appearance="fill" class="expense-naming full-width">
+    <mat-label for="expense-name">Expense Name: </mat-label>
+    <input matInput formControlName="expense-name" />
+  </mat-form-field>
+
+  <!-- Expense Amount -->
   <div class="expense-amt">
-    <p class="expense-amt-dollar-form">
-      <label for="expense-amt-dollar">Expense Amount ($):</label>
-      <input type="text" id="expense-amt-dollar" />
-    </p>
-    <p class="expense-amt-percent">
-      <label for="expense-amt-percent">Expense Amount (%):</label>
-      <input type="text" id="expense-amt-percent" />
-    </p>
+    <mat-form-field appearance="fill" class="half-width">
+      <mat-label> Expense Amount ($): </mat-label>
+      <input matInput type="number" formControlName="expenseAmtDollar" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="half-width">
+      <mat-label>Expense Amount (%):</mat-label>
+      <input matInput type="number" formControlName="expenseAmtPercent" />
+    </mat-form-field>
   </div>
-  <p>
-    <label for="exp-type">Expense Type:</label>
-    <select class="exp-type" name="exp-type" id="exp-type">
-      <option value="" disabled selected>Select an option</option>
-      <option value="fees">Fees</option>
-      <option value="food">Food</option>
-      <option value="rent">Rent</option>
-      <option value="insurance">Insurance</option>
-      <option value="medical">Medical</option>
-      <option value="others">Others</option>
-      <option value="transportation">Transportation</option>
-      <option value="utilities">Utilities</option>
-    </select>
-  </p>
-  <p class="expense-freq">
-    <label for="exp-freq">Expense Frequency:</label>
-    <select class="exp-freq" name="exp-freq" id="exp-freq">
-      <option value="weekly">Weekly</option>
-      <option value="biweekly">Bi-weekly</option>
-      <option value="monthly">Monthly</option>
-      <option value="yearly">Yearly</option>
-    </select>
-  </p>
-  <p>
-    <label for="due-date">Due Date:</label>
-    <input type="date" id="due-date" />
-  </p>
+  <!-- Expense Type -->
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Expense Type</mat-label>
+    <mat-select formControlName="expType">
+      <mat-option value="" disabled>Select an Option</mat-option>
+      <mat-option value="fees">Fees</mat-option>
+      <mat-option value="food">Food</mat-option>
+      <mat-option value="rent">Rent</mat-option>
+      <mat-option value="insurance">Insurance</mat-option>
+      <mat-option value="medical">Medical</mat-option>
+      <mat-option value="others">Others</mat-option>
+      <mat-option value="transportation">Transportation</mat-option>
+      <mat-option value="utilities">Utilities</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <!-- Expense Frequency -->
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Expense Frequency</mat-label>
+    <mat-select formControlName="expFreq">
+      <mat-option value="weekly">Weekly</mat-option>
+      <mat-option value="biweekly">Bi-weekly</mat-option>
+      <mat-option value="monthly">Monthly</mat-option>
+      <mat-option value="yearly">Yearly</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <!-- Due Date: for things like utility bills -->
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Due Date: </mat-label>
+    <input matInput [matDatepicker]="dueDatePicker" formControlName="dueDate" />
+    <mat-datepicker-toggle matSuffix [for]="dueDatePicker">
+      <mat-datepicker #dueDatePicker></mat-datepicker>
+    </mat-datepicker-toggle>
+  </mat-form-field>
+
   @if (defaultCard == false) {
   <!-- Content to display when the condition is true -->
   <button class="delete-btn"><mat-icon>delete_outline</mat-icon></button>

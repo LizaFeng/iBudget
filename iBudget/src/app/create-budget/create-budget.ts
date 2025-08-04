@@ -11,6 +11,18 @@ import { IncomeComponent } from '../income-component/income-component';
 import { ExpenseComponent } from '../expense-component/expense-component';
 import { DebtComponent } from '../debt-component/debt-component';
 import { SavingsComponent } from '../savings-component/savings-component';
+import { CommonModule } from '@angular/common';
+import {
+  MatDatepicker,
+  MatDatepickerModule,
+} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import {
+  MatFormField,
+  MatFormFieldModule,
+  MatLabel,
+} from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 @Component({
   selector: 'app-create-budget',
   imports: [
@@ -19,11 +31,16 @@ import { SavingsComponent } from '../savings-component/savings-component';
     ExpenseComponent,
     DebtComponent,
     SavingsComponent,
+    CommonModule,
   ],
+
   templateUrl: './create-budget.html',
-  styleUrl: './create-budget.css',
+  styleUrls: ['./create-budget.css'],
 })
 export class CreateBudget {
+  //Declaring a form control instance
+  formControl = new FormControl('');
+
   budgetForm: FormGroup;
 
   constructor(private fb: FormBuilder) {
@@ -39,7 +56,7 @@ export class CreateBudget {
     return this.budgetForm.get('incomes') as FormArray;
   }
   get expenses() {
-    return this.budgetForm.get('budgets') as FormArray;
+    return this.budgetForm.get('expenses') as FormArray;
   }
   get debts() {
     return this.budgetForm.get('debts') as FormArray;
@@ -51,7 +68,7 @@ export class CreateBudget {
   newIncome() {
     return this.fb.group({
       source: ['', Validators.required],
-      amount: [0, [Validators.required, Validators.min(0)]],
+      amount: ['', [Validators.required, Validators.min(0)]],
     });
   }
 
@@ -66,16 +83,16 @@ export class CreateBudget {
   newExpenses() {
     return this.fb.group({
       source: ['', Validators.required],
-      amount: [0, [Validators.required, Validators.min(0)]],
+      amount: ['', [Validators.required, Validators.min(0)]],
     });
   }
 
   addExpenses() {
-    this.incomes.push(this.newIncome());
+    this.expenses.push(this.newExpenses());
   }
 
   removeExpenses(index: number) {
-    this.incomes.removeAt(index);
+    this.expenses.removeAt(index);
   }
 
   newDebts() {
@@ -86,11 +103,11 @@ export class CreateBudget {
   }
 
   addDebts() {
-    this.incomes.push(this.newIncome());
+    this.debts.push(this.newIncome());
   }
 
   removeDebts(index: number) {
-    this.incomes.removeAt(index);
+    this.debts.removeAt(index);
   }
 
   newSavings() {
@@ -101,11 +118,11 @@ export class CreateBudget {
   }
 
   addSavings() {
-    this.incomes.push(this.newIncome());
+    this.savings.push(this.newIncome());
   }
 
   removeSavings(index: number) {
-    this.incomes.removeAt(index);
+    this.savings.removeAt(index);
   }
 
   onSubmit() {

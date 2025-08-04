@@ -1,10 +1,29 @@
 import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { Input } from '@angular/core';
-
+import {
+  MatFormField,
+  MatFormFieldModule,
+  MatLabel,
+} from '@angular/material/form-field';
+import { MatInput, MatInputModule } from '@angular/material/input';
+import { MatSelect, MatSelectModule } from '@angular/material/select';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 @Component({
   selector: 'app-income-component',
-  imports: [MatIconModule],
+  imports: [
+    MatIconModule,
+    MatFormField,
+    MatFormFieldModule,
+    MatLabel,
+    MatInputModule,
+    MatSelect,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+  ],
+  providers: [MatDatepickerModule],
   templateUrl: './income-component.html',
   styleUrl: './income-component.css',
 })
