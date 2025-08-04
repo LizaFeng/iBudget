@@ -12,6 +12,17 @@ import { ExpenseComponent } from '../expense-component/expense-component';
 import { DebtComponent } from '../debt-component/debt-component';
 import { SavingsComponent } from '../savings-component/savings-component';
 import { CommonModule } from '@angular/common';
+import {
+  MatDatepicker,
+  MatDatepickerModule,
+} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import {
+  MatFormField,
+  MatFormFieldModule,
+  MatLabel,
+} from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 @Component({
   selector: 'app-create-budget',
   imports: [
@@ -22,6 +33,7 @@ import { CommonModule } from '@angular/common';
     SavingsComponent,
     CommonModule,
   ],
+
   templateUrl: './create-budget.html',
   styleUrls: ['./create-budget.css'],
 })
