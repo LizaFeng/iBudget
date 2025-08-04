@@ -1,42 +1,70 @@
 <div class="component-main-container">
   <div class="income-info">
-    <div class="income-naming">
-      <label for="income-source-name">Income Source Name:</label>
-      <input class="income-source-name" id="income-source-name" />
-    </div>
+    <mat-form-field appearance="fill" class="income-name full-wdith">
+      <mat-label for="incomeSourceName">Income Source Name: </mat-label>
+      <input
+        matInput
+        formControlName="incomeSourceName"
+        class="income-source-name"
+      />
+    </mat-form-field>
     <div class="pay-info">
-      <label for="income-source-amt">Income Source Amount:</label>
-      <input class="income-source-amt" id="income-source-amt" />
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label for="incomeSourceAmt">Income Source Amount:</mat-label>
+        <input matInput type="number" formControlName="incomeSourceAmt" />
+      </mat-form-field>
 
-      <select
-        class="income-frequency"
-        name="income-frequency"
-        id="income-frequency"
-      >
-        <option value="weekly">Weekly</option>
-        <option value="biweekly">Bi-weekly</option>
-        <option value="monthly">Monthly</option>
-      </select>
+      <mat-form-field appearance="fill" class="full-width income-frequency">
+        <mat-label>Income Frequency: </mat-label>
+        <mat-select appearance="fill" formControlName="incomeFrequency">
+          <mat-option value="weekly">Weekly</mat-option>
+          <mat-option value="biweekly">Bi-weekly</mat-option>
+          <mat-option value="monthly">Monthly</mat-option>
+        </mat-select>
+      </mat-form-field>
     </div>
+    <!-- Pay Date Info -->
     <div class="pay-date-info">
-      <label for="pay-date">Pay Date:</label>
-      <input type="date" id="pay-date" name="pay-date" class="pay-date" />
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Pay Date:</mat-label>
+        <input
+          matInput
+          [matDatepicker]="payDatePicker"
+          formControlName="payDate"
+        />
+        <mat-datepicker-toggle matSuffix [for]="payDatePicker">
+        </mat-datepicker-toggle>
+        <mat-datepicker #payDatePicker></mat-datepicker>
+      </mat-form-field>
     </div>
+    <!-- Pay Period -->
     <div class="pay-period">
-      <label for="pay-period-start">Pay Period Start: </label>
-      <input
-        type="date"
-        id="pay-period-start"
-        name="pay-period-start"
-        class="pay-period-start"
-      />
-      <label for="pay-period-end">Pay Period End: </label>
-      <input
-        type="date"
-        id="pay-period-end"
-        name="pay-period-end"
-        class="pay-period-end"
-      />
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Pay Period Start: </mat-label>
+        <input
+          matInput
+          [matDatepicker]="payPeriodStartPicker"
+          formControlName="payPeriodStart"
+        />
+        <mat-datepicker-toggle
+          matSuffix
+          [for]="payPeriodStartPicker"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #payPeriodStartPicker></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="full-wdith">
+        <mat-label>Pay Period End: </mat-label>
+        <input
+          matInput
+          [matDatepicker]="payPeriodEndPicker"
+          formControlName="payPeriodEnd"
+        />
+        <mat-datepicker-toggle
+          matSuffix
+          [for]="payPeriodEndPicker"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #payPeriodEndPicker></mat-datepicker>
+      </mat-form-field>
     </div>
   </div>
   @if (defaultCard == false) {
