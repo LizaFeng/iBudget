@@ -24,25 +24,39 @@
     <div formArrayName="incomes">
       <h3>Income</h3>
       <app-income-component [defaultCard]="true" />
+      <div
+        *ngFor="let income of incomes.controls; let i = index"
+        [formGroupName]="i"
+      >
+        <app-income-component [defaultCard]="false" />
+      </div>
+      <button type="button" (click)="addIncome()">Add Income</button>
     </div>
-    <button type="button" (click)="addIncome()">Add Income</button>
 
     <!-- Expenses Section -->
-    <div formArrayName="expenses"></div>
-    <h3>Expenses</h3>
-    <app-expense-component [defaultCard]="true" />
-    <div
-      *ngFor="let expense of expenses.controls; let i = index"
-      [formGroupName]="i"
-    >
-      <app-expense-component [defaultCard]="false" />
+    <div formArrayName="expenses">
+      <h3>Expenses</h3>
+      <app-expense-component [defaultCard]="true" />
+      <div
+        *ngFor="let expense of expenses.controls; let j = index"
+        [formGroupName]="j"
+      >
+        <app-expense-component [defaultCard]="false" />
+      </div>
+      <button type="button" (click)="addExpenses()">Add expenses</button>
     </div>
-    <button type="button" (click)="addExpenses()">Add expenses</button>
     <!-- Debt Section -->
 
     <div formArrayName="debts">
       <h3>Debt</h3>
-      <app-debt-component [defaultCard]="true" />
+      <!-- Excluding this part because not everyone has to account for debt -->
+      <!-- <app-debt-component [defaultCard]="true" /> -->
+      <div
+        *ngFor="let debt of debts.controls; let k = index"
+        [formGroupName]="k"
+      >
+        <app-debt-component [defaultCard]="false" />
+      </div>
       <button type="button" (click)="addDebts()">Add Debts</button>
     </div>
     <!-- Savings Section -->
@@ -50,6 +64,12 @@
     <div formArrayName="savings">
       <h3>Savings</h3>
       <app-savings-component [defaultCard]="true" />
+      <div
+        *ngFor="let saving of savings.controls; let l = index"
+        [formGroupName]="l"
+      >
+        <app-savings-component [defaultCard]="false" />
+      </div>
       <button type="button" (click)="addSavings()">Add Savings</button>
     </div>
 
