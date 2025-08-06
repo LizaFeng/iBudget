@@ -24,8 +24,14 @@
     <div formArrayName="incomes">
       <h3>Income</h3>
       <app-income-component [defaultCard]="true" />
+      <div
+        *ngFor="let income of incomes.controls; let i = index"
+        [formGroupName]="i"
+      >
+        <app-income-component [defaultCard]="false" />
+      </div>
+      <button type="button" (click)="addIncome()">Add Income</button>
     </div>
-    <button type="button" (click)="addIncome()">Add Income</button>
 
     <!-- Expenses Section -->
     <div formArrayName="expenses"></div>
