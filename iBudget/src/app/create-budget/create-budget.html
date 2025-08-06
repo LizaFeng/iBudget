@@ -34,16 +34,17 @@
     </div>
 
     <!-- Expenses Section -->
-    <div formArrayName="expenses"></div>
-    <h3>Expenses</h3>
-    <app-expense-component [defaultCard]="true" />
-    <div
-      *ngFor="let expense of expenses.controls; let i = index"
-      [formGroupName]="i"
-    >
-      <app-expense-component [defaultCard]="false" />
+    <div formArrayName="expenses">
+      <h3>Expenses</h3>
+      <app-expense-component [defaultCard]="true" />
+      <div
+        *ngFor="let expense of expenses.controls; let j = index"
+        [formGroupName]="j"
+      >
+        <app-expense-component [defaultCard]="false" />
+      </div>
+      <button type="button" (click)="addExpenses()">Add expenses</button>
     </div>
-    <button type="button" (click)="addExpenses()">Add expenses</button>
     <!-- Debt Section -->
 
     <div formArrayName="debts">
