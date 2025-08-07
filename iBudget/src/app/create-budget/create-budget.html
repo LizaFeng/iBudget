@@ -81,7 +81,11 @@
         *ngFor="let saving of savings.controls; let l = index"
         [formGroupName]="l"
       >
-        <app-savings-component [defaultCard]="false" />
+        <app-savings-component
+          [defaultCard]="false"
+          [index]="l"
+          [onRemove]="removeSavings.bind(this)"
+        />
       </div>
       <button type="button" (click)="addSavings()">Add Savings</button>
     </div>
