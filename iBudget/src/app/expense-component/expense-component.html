@@ -54,6 +54,8 @@
 
   @if (defaultCard == false) {
   <!-- Content to display when the condition is true -->
-  <button class="delete-btn"><mat-icon>delete_outline</mat-icon></button>
+  <button class="delete-btn" (click)="removeSelf()">
+    <mat-icon>delete_outline</mat-icon>
+  </button>
   }
 </div>

@@ -45,7 +45,11 @@
         *ngFor="let expense of expenses.controls; let j = index"
         [formGroupName]="j"
       >
-        <app-expense-component [defaultCard]="false" />
+        <app-expense-component
+          [defaultCard]="false"
+          [index]="j"
+          [onRemove]="removeExpenses.bind(this)"
+        />
       </div>
       <button type="button" (click)="addExpenses()">Add expenses</button>
     </div>
