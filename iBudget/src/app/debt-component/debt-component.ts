@@ -32,5 +32,13 @@ import { MatInput, MatInputModule } from '@angular/material/input';
   styleUrl: './debt-component.css',
 })
 export class DebtComponent {
+  @Input() index!: number;
   @Input() defaultCard: boolean = false;
+  @Input() onRemove!: (index: number) => void;
+
+  removeSelf() {
+    if (this.onRemove) {
+      this.onRemove(this.index);
+    }
+  }
 }

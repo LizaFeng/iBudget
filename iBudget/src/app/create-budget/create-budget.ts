@@ -109,6 +109,7 @@ export class CreateBudget {
 
   removeDebts(index: number) {
     this.debts.removeAt(index);
+    console.log(index);
   }
 
   newSavings() {

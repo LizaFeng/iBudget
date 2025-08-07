@@ -55,7 +55,11 @@
         *ngFor="let debt of debts.controls; let k = index"
         [formGroupName]="k"
       >
-        <app-debt-component [defaultCard]="false" />
+        <app-debt-component
+          [defaultCard]="false"
+          [index]="k"
+          [onRemove]="removeDebts.bind(this)"
+        />
       </div>
       <button type="button" (click)="addDebts()">Add Debts</button>
     </div>
