@@ -74,11 +74,11 @@ export class CreateBudget {
 
   addIncome() {
     this.incomes.push(this.newIncome());
-    console.log(this.incomes.length);
   }
 
   removeIncome(index: number) {
     this.incomes.removeAt(index);
+    console.log('remove at', index);
   }
 
   newExpenses() {

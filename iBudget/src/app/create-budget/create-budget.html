@@ -28,7 +28,11 @@
         *ngFor="let income of incomes.controls; let i = index"
         [formGroupName]="i"
       >
-        <app-income-component [defaultCard]="false" />
+        <app-income-component
+          [index]="i"
+          [defaultCard]="false"
+          [onRemove]="removeIncome.bind(this)"
+        />
       </div>
       <button type="button" (click)="addIncome()">Add Income</button>
     </div>
@@ -41,7 +45,11 @@
         *ngFor="let expense of expenses.controls; let j = index"
         [formGroupName]="j"
       >
-        <app-expense-component [defaultCard]="false" />
+        <app-expense-component
+          [defaultCard]="false"
+          [index]="j"
+          [onRemove]="removeExpenses.bind(this)"
+        />
       </div>
       <button type="button" (click)="addExpenses()">Add expenses</button>
     </div>
@@ -49,13 +57,18 @@
 
     <div formArrayName="debts">
       <h3>Debt</h3>
+
       <!-- Excluding this part because not everyone has to account for debt -->
       <!-- <app-debt-component [defaultCard]="true" /> -->
       <div
         *ngFor="let debt of debts.controls; let k = index"
         [formGroupName]="k"
       >
-        <app-debt-component [defaultCard]="false" />
+        <app-debt-component
+          [defaultCard]="false"
+          [index]="k"
+          [onRemove]="removeDebts.bind(this)"
+        />
       </div>
       <button type="button" (click)="addDebts()">Add Debts</button>
     </div>
@@ -68,7 +81,11 @@
         *ngFor="let saving of savings.controls; let l = index"
         [formGroupName]="l"
       >
-        <app-savings-component [defaultCard]="false" />
+        <app-savings-component
+          [defaultCard]="false"
+          [index]="l"
+          [onRemove]="removeSavings.bind(this)"
+        />
       </div>
       <button type="button" (click)="addSavings()">Add Savings</button>
     </div>

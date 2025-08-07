@@ -25,5 +25,13 @@ import { MatSelect, MatSelectModule } from '@angular/material/select';
   styleUrl: './expense-component.css',
 })
 export class ExpenseComponent {
+  @Input() index!: number;
   @Input() defaultCard: boolean = false;
+  @Input() onRemove!: (index: number) => void;
+
+  removeSelf() {
+    if (this.onRemove) {
+      this.onRemove(this.index);
+    }
+  }
 }
