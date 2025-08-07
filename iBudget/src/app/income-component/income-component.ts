@@ -31,5 +31,13 @@ export class IncomeComponent {
   /* automatically set it to false because we only encounter default card once, 
   since this component will be used more often when users add a budgeting card
   */
+  @Input() index!: number;
   @Input() defaultCard: boolean = false;
+  @Input() onRemove!: (index: number) => void;
+
+  removeSelf() {
+    if (this.onRemove) {
+      this.onRemove(this.index);
+    }
+  }
 }

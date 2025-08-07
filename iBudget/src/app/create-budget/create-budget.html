@@ -28,7 +28,11 @@
         *ngFor="let income of incomes.controls; let i = index"
         [formGroupName]="i"
       >
-        <app-income-component [defaultCard]="false" />
+        <app-income-component
+          [index]="i"
+          [defaultCard]="false"
+          [onRemove]="removeIncome.bind(this)"
+        />
       </div>
       <button type="button" (click)="addIncome()">Add Income</button>
     </div>
@@ -49,6 +53,7 @@
 
     <div formArrayName="debts">
       <h3>Debt</h3>
+
       <!-- Excluding this part because not everyone has to account for debt -->
       <!-- <app-debt-component [defaultCard]="true" /> -->
       <div
